@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
- *main - entry point
- *c -specific integer value
- *Description - function to check lowercase c
- *_islower - checks for lowercase c
- *Result: 1 (success)
+ *_islower - Checks if a character is lowercase.
+ *
+ *@c: is the character to be checked.
+ *
+ *Return: 1 if character is lowercase, else print 0
  */
 
 int _islower(int c)
