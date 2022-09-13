@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- *_abs -a function that computes the absolute value of an integer.
+ *_abs(int) -a function that computes the absolute value of an integer.
  *
  *Description - it gives the absolute value of an integer
  *
@@ -9,6 +9,8 @@
  */
 int _abs(int)
 {
+	int n;
+
 	if (n >= 0)
 		return (n);
 	else
