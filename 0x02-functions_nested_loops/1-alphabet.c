@@ -1,16 +1,14 @@
 #include <stdio.h>
 
 /**
- *main - prints alphabets in lowercase
+ *print_alphabet - prints alphabets in lowercase
  *
  *Description - prints alphabets in lowercase
  *
  *Return: 0 (successful)
  */
 
-void print_alphabet(void);
-
-int main(void)
+void print_alphabet(void)
 {
 	char letter;
 
