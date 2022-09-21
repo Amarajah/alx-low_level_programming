@@ -11,11 +11,22 @@
 
 char *_strcat(char *dest, char *src)
 {
-	char dest, src;
+	int a = 0;
+	int b = 0;
 
-	strcat(dest,src);
-	
-	printf("Concatenated String: %s\n", strcat(dest,src));
+	while (dest[a] != '\0')
+	{
+		a++;
+	}
 
-	return (0);
+	while (src[b] != '\0')
+	{
+		dest[a] += src[b];
+		a++;
+		b++;
+	}
+
+	dest += '\0';
+
+	return (dest);
 }
