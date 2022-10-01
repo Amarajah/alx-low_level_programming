@@ -8,11 +8,11 @@
  * Return: 0
  */
 
-void *_memset(void *s, int c, size_t n)
+char *_memset(char *s, char c,unsigned int n)
 {
 	unsigned int index;
 
-	unsigned char *memory = s, value = c;
+	char *memory = s, value = c;
 
 	for (index = 0; index < n; index++)
 
