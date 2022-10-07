@@ -13,10 +13,11 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int *ptr;
+	unsigned int index;
 
-	ptr = (int *)malloc(size * sizeof(int));
+	ptr = malloc(size * nmemb);
 
-	if (nmemb || size == 0)
+	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
@@ -24,5 +25,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	exit(0);
+	for (index = 0; index < (size * nmemb); index++)
+		ptr[index] = '\0';
+
+	return (ptr);
 }
