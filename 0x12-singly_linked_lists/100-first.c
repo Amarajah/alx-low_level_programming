@@ -4,7 +4,15 @@
  * premain - run before main
  */
 
-void __attribute__ ((constructor)) premain()
+void __attribute__ ((constructor)) premain();
+
+/**
+ * hare - Prints a string before the
+ * main function is executed.
+ */
+
+
+void hare(void)
 {
 	printf(
 		"You're beat! and yet, you must allow,\n
