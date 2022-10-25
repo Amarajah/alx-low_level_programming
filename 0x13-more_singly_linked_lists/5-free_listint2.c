@@ -9,6 +9,7 @@
 void free_listint2(listint_t **head)
 {
 	listint_t *new_node, *current_node;
+
 	current_node = *head;
 
 	if (head == NULL)
