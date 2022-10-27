@@ -10,6 +10,14 @@ void print_binary(unsigned long int n)
 {
 	unsigned long int i;
 
-	for (i = 1 << 31; i > 0; i >>= 1)
-		printf("%u", !!(n & 1));
+	if (n == 0)
+		_putchar('0');
+	else
+	{
+		i = n & 1;
+		n = n >> 1;
+		if (!n == 0)
+			print_binary(n);
+		_putchar(i + '0')
+	}
 }
