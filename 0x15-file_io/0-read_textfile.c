@@ -15,27 +15,19 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t op ,rd, wr;
-	char *buffer;
+	FILE *file = fopen(filename, "r");
 
-	if (filename == NULL)
-		return (0);
-
-	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL)
-		return (0);
-
-	op = open(filename, O_RDONLY);
-	rd = read(op, buffer, letters);
-	wr = write(STDOUT_FILENO, buffer, rd);
-
-	if (op == -1 || rd == -1 || wr == -1 || wr !=rd)
-	{
-		free(buffer);
+	if (file == NULL) {
 		return (0);
 	}
-	free(buffer);
-	close(op);
 
-	return (wr);
+	for (size_t i = 0; i < letters; i++) {
+		char c = fgetc(file);
+		if (c == EOF) {
+			break;
+		}
+		 write(1, &c, 1);
+	}
+	fclose(file);
+	return letters;
 }
