@@ -14,5 +14,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int hash = hash_djb2(key);
 
-	return hash % size;
+	return (hash % size);
 }
