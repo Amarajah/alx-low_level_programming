@@ -1,18 +1,16 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - function that adds an element to the hash table
- * @ht: hash table you want to add or update the key/value
- * @key: hash key which cannot be empty
- * @value: value associated with the key
- * value must be duplicated. value can be an empty string
- * Return: 1 if it succeeded, 0 otherwise
- * In case of collision, add the new node at the beginning of the list
+ * key_index - Get the index at which a key/value
+ * pair should be stored in array of a hash table.
+ * @key: The key to get the index of.
+ * @size: The size of the array of the hash table.
+ * Return: The index of the key.
+ * Description: Uses the djb2 algorithm.
  */
 
-int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	unsigned long int hash = hash_djb2(key);
-
-	return (hash % size);
+	return (hash_djb2(key) % size);
 }
+
