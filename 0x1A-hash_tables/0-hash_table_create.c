@@ -26,10 +26,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 	t->array = malloc(sizeof(struct hash_node_t *) * size);
 
 	if (t->array == NULL)
-	free (t);
+	free(t);
 	return (NULL);
 
-	for(i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 		t->array[i] = NULL;
 
 	return (t);
