@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /**
- * *hash_table_create - Write a function that creates a hash table
+ * hash_table_create - Write a function that creates a hash table
  * @size: unsigned long int size of array
  * Return: a pointer to the newly created hash table
  * else return NULL
@@ -18,9 +18,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	t = malloc(sizeof(hash_table_t));
 
 	if (t == NULL)
-	{
 		return (NULL);
-	}
 
 	t->size = size;
 	t->array = malloc(sizeof(struct hash_node_t *) * size);
